@@ -1,0 +1,20 @@
+{
+    "tasks": [
+        {
+            "type": "process",
+            "label": "build",
+            "command": "make",
+            "args": [
+                "all"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        }
+    ],
+    "version": "2.0.0"
+}
