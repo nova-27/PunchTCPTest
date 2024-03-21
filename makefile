@@ -1,7 +1,14 @@
-all: build/main.out
+SRCS := main.cpp stunutil.cpp
+OBJDIR := ./build/
+OBJS := $(SRCS:%.cpp=$(OBJDIR)%.o)
 
-build/main.out: main.cpp
-	g++ main.cpp -g -o $@
+all: build/main
+
+build/main: $(OBJS)
+	g++ -g $(OBJS) -o $@
+
+$(OBJDIR)%.o: %.cpp
+	g++ -g -c $< -o $@
 
 clean:
-	rm -f build/*
+	rm -f $(OBJDIR)*
